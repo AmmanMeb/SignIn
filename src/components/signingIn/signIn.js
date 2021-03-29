@@ -29,7 +29,7 @@ const onSubmit = (event) => {
   apiClient.signIn(username, password).then((response) => {
     console.log(response)  
     if (response === 'Logged In') {
-      return  document.getElementById('error').innerHTML = ("Correct Username or Password"); /*<Redirect to='/forum' />*/
+      return  document.getElementById('error').innerHTML =("Hi") + (username); /*<Redirect to='/forum' />*/
     }
     else {
       document.getElementById('error').innerHTML = ("Wrong Username or Password");
