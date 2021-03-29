@@ -30,7 +30,13 @@ const onSubmit = (event) => {
   apiClient.signIn(username, password).then((response) => {
     console.log(response)  
     if (response === 'Logged In') {
-      return <Redirect to='/forum' />
+      return <Redirect
+         to={{
+         pathname: "/forum",
+         state: { username }
+      }}
+    />
+
       
     }
     else {
@@ -41,7 +47,12 @@ const onSubmit = (event) => {
   })
 }
 
-
+<Redirect
+            to={{
+            pathname: "/Forum",
+            state: { username: getUser }
+          }}
+        />
 
 
 return (

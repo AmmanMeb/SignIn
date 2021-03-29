@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import apiClient from '../../api/apiclient'
-import username from '../signingIn/signIn'
+import SignIn from '../signingIn/signIn';
 
 function Forum() {
     
@@ -19,10 +19,7 @@ function Forum() {
    /* apiClient.comment() .then((response) =>{
     document.getElementById("comment-section").innerHTML = response
     })*/
-    
-    apiClient.signIn(username) .then((response) =>{
-        document.getElementById("comment-section").innerHTML = ("hi " + (username) )
-        })
+
    
     
       
@@ -34,7 +31,7 @@ function Forum() {
                 <button onClick={onPost}>Post</button>
             </div>            
             <div>
-                <body id = "comment-section" ></body>
+            <body id = "comment" >Welcome {this.props.location.state.username}</body>
             </div>
         </section>
     ) 
