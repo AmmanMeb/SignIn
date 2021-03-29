@@ -9,6 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 const mysql = require('mysql')
 var cors = require('cors')
+const { json } = require('body-parser')
 app.use(cors())
 
 const port = 8080
@@ -28,28 +29,27 @@ app.post('/signUp', function (req, res) {
     if (err) {
       throw err
     }
-    if (result.length != 1) {
-    return res.send('Failed to Add');
+    if (result.length !== 1) {
+    return res.send("Account Created");
   } else {
-    res.send("Account Created");
+    res.send('Failed to Add');
   }
     })
   })
 
-app.get('/signIn', function (req, res){
-  const queryString = 'SELECT * FROM accounts WHERE Username = ? AND Password  = ?'
-    con.query(queryString, [req.body.username, req.body.password], function (err, result){
-      
-
+app.post('/signIn', function (req, res){
+  const queryString = 'SELECT * FROM accounts WHERE Username = ? AND Password  = ? LIMIT 1'
+    console.log (req.body)
+    con.query(queryString, [req.body.username, req.body.password], function (err, result){     
     if (err) {
      throw err;
+    }    
+    if (result.length !== 1) {
+      return  res.send('Incorrect Login')
     }
-    if (result.length != 1) {
-      return  res.send('Error')
-    }
-   else {
+    if (result.length === 1) {
      res.send('Logged In')
-    }
+    };
     });  
 });
 
@@ -61,12 +61,12 @@ app.post('/forum', function (req, res){
       throw err;
     }
     if (result.length != 1) {
-      return res.send('Comment failed to post')
+      return res.send("Posted Comment")
     }
    else {
-     res.send("Posted Comment")
+     res.send('Comment failed to post')
     };
-    })
+  })
 })
 app.get('/forum', function (req, res){
   const queryString = 'SELECT * FROM comments WHERE Comments = ?'
@@ -74,8 +74,7 @@ app.get('/forum', function (req, res){
   con.query(queryString, [req.body.insert], function (err, result){
     if (err) {throw err;}
     var commenting = JSON.stringify(result)
-    res.send(commenting);
-    console.log (commenting)
+    res.send(commenting);    
   }) 
 })
 app.listen(port, (  ) => {

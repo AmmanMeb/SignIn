@@ -1,5 +1,7 @@
+
 import React, { useState } from 'react';
 import apiClient from '../../api/apiclient'
+import username from '../signingIn/signIn'
 
 function Forum() {
     
@@ -12,9 +14,18 @@ function Forum() {
         
       })
     }
+
+
    /* apiClient.comment() .then((response) =>{
     document.getElementById("comment-section").innerHTML = response
     })*/
+    
+    apiClient.signIn(username) .then((response) =>{
+        document.getElementById("comment-section").innerHTML = ("hi " + (username) )
+        })
+   
+    
+      
     return (
         <section class = "index-banner" >
             <div>

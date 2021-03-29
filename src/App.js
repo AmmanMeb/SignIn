@@ -4,7 +4,8 @@ import Header from './components/headerComponent/header';
 import Account from './components/mainComponent/main';
 import SignIn from './components/signingIn/signIn';
 import Forum from './components/forum/forum';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom' 
+import Comment from './components/forum/commentBox';
+import {BrowserRouter as Router, Route} from 'react-router-dom' 
 
 
 
@@ -15,8 +16,9 @@ class App extends Component {
       <div className="App">
         <Header />
         <Route exact path = '/' component={Account}/>
-        <Route exact path = '/SignIn' component={SignIn}/>
-        <Route exact path = '/Forum' component={Forum}/>
+        <Route  path = '/SignIn' component={SignIn}/>
+        <Route path = '/Forum' component={Forum}/>
+        <Route path = '/Comment' component={Comment}/>
       </div>
     </Router>
     )

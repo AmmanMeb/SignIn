@@ -1,6 +1,7 @@
 import apiClient from '../../api/apiclient'
 import React, { useState } from 'react';
 import {Link} from "react-router-dom";
+import {Redirect} from 'react-router-dom';
 import { Grid, Button, TextField } from "@material-ui/core"
 import { createMuiTheme } from '@material-ui/core/styles';
 import { ThemeProvider } from '@material-ui/styles';
@@ -29,7 +30,8 @@ const onSubmit = (event) => {
   apiClient.signIn(username, password).then((response) => {
     console.log(response)  
     if (response === 'Logged In') {
-      return  document.getElementById('error').innerHTML =("Hi") + (username); /*<Redirect to='/forum' />*/
+      return <Redirect to='/forum' />
+      
     }
     else {
       document.getElementById('error').innerHTML = ("Wrong Username or Password");
@@ -38,6 +40,9 @@ const onSubmit = (event) => {
     console.log('Error found when creating meeting');
   })
 }
+
+
+
 
 return (
   <section class="index-banner">
@@ -69,6 +74,8 @@ return (
     </ThemeProvider>      
   </section>         
 ) 
-       
-     }
-     export default SignIn;
+     
+}
+  export default SignIn;
+  
+     
