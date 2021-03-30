@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import apiClient from '../../api/apiclient'
 import SignIn from '../signingIn/signIn';
 
-function Forum() {
+function Forum(props) {
     
     const [comment, inputComment] = useState ('')
     
@@ -31,7 +31,7 @@ function Forum() {
                 <button onClick={onPost}>Post</button>
             </div>            
             <div>
-            <body id = "comment" >Welcome {this.props.location.state.username}</body>
+            <body id = "comment" >Welcome {props.location.state.username}</body>
             </div>
         </section>
     ) 
