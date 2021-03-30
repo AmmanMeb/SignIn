@@ -22,25 +22,6 @@ export default class apiClient {
          return response.data;   
     }
 
-    static async forum(comm){        
-      const response = await axios
-       .post('http://localhost:8080/forum', {
-          comment: comm,
-       })   
-        
-       .then ()
-          return response.data;
-          
-        
-    }
-
-    static async forum(comm){    
-        const response = await axios    
-          .get('http://localhost:8080/forum', {
-             comment: comm
-            }) 
-          .then ()
-            return response.data;   
-    }
+  
     
 }

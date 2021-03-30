@@ -29,11 +29,7 @@ app.post('/signUp', function (req, res) {
     if (err) {
       throw err
     }
-    if (result.length !== 1) {
-    return res.send("Account Created");
-  } else {
-    res.send('Failed to Add');
-  }
+     res.send ('Account Created')
     })
   })
 
@@ -52,31 +48,6 @@ app.post('/signIn', function (req, res){
     };
     });  
 });
-
-app.post('/forum', function (req, res){
-  const queryString = "INSERT INTO comments (Comments) VALUES (?)"
-  console.log (req.body)
-  con.query(queryString, [req.body.comment], function (err, result){
-    if (err) {
-      throw err;
-    }
-    if (result.length != 1) {
-      return res.send("Posted Comment")
-    }
-   else {
-     res.send('Comment failed to post')
-    };
-  })
-})
-app.get('/forum', function (req, res){
-  const queryString = 'SELECT * FROM comments WHERE Comments = ?'
-  console.log (req.body)
-  con.query(queryString, [req.body.insert], function (err, result){
-    if (err) {throw err;}
-    var commenting = JSON.stringify(result)
-    res.send(commenting);    
-  }) 
-})
 app.listen(port, (  ) => {
   console.log(`Example app listening at http://localhost:${port}`)
 })

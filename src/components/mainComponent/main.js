@@ -12,14 +12,19 @@ function Account() {
  
  const onSubmit = (event) => {
   event.preventDefault()
+  
+  if (username.length < 1) {
+   return document.getElementById('error').innerHTML = ("Please enter a Password or Username");
+  }
+  if (password.length < 1) {
+    return  document.getElementById('error').innerHTML = ("Please enter a Password or Username");
+  }
    apiClient.signUp(username, password) .then((response) => {
    console.log(response)
-   if (response === 'Failed to Add') {
-     return console.log ("no account")
+   if (response === 'Account Created') {
+     return console.log ("logged in")
    }
-   if (response === "Account Created") {
-    return console.log ("logged in")
-  }
+  
    })
    
  }
@@ -36,6 +41,7 @@ function Account() {
               <label>password</label>
               <input type="text" name="password" onChange = {e => {setPass(e.target.value)}}></input>
             </div>  
+            <div id = "error"></div>
             <div>
               
                 <button onClick={onSubmit}>submit</button>

@@ -36,9 +36,8 @@ const onSubmit = (event) => {
          state: { username }
       }}
     />
-
-      
     }
+
     else {
       document.getElementById('error').innerHTML = ("Wrong Username or Password");
     }
@@ -46,13 +45,6 @@ const onSubmit = (event) => {
     console.log('Error found when creating meeting');
   })
 }
-
-<Redirect
-            to={{
-            pathname: "/Forum",
-            state: { username: getUser }
-          }}
-        />
 
 
 return (
