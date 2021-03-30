@@ -17,7 +17,7 @@ class App extends Component {
         <Header />
         <Route exact path = '/' component={Account}/>
         <Route  path = '/SignIn' component={SignIn}/>
-        <Route path = '/Forum' component={Forum}/>
+        <Route path="/Forum" render={(props) => <Forum {...props}/>}/>
         <Route path = '/Comment' component={Comment}/>
       </div>
     </Router>
