@@ -6,7 +6,6 @@ import SignIn from './components/signingIn/signIn';
 
 
 
-
 class App extends Component {
   render() {
     return (

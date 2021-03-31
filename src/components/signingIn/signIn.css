@@ -8,3 +8,15 @@
   font-size: 100px;
   z-index: 99;
 }
+
+.index-banner {
+  background-image: url("../../../src/pics/Woman.jpg");
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400%;
+  background-attachment: fixed;
+  height: calc(110vh - 80px);
+}

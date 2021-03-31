@@ -3,7 +3,7 @@ import './main.css';
 import apiClient from '../../api/apiclient'
 
 
- 
+
  
 function Account() {
    
@@ -31,7 +31,7 @@ function Account() {
  
     
       return (
-        <section class="index-banner">
+        <section class="index-banner-2">
           <div>Create Account</div>
           <div>
               <label>username</label> 
@@ -41,14 +41,14 @@ function Account() {
               <label>password</label>
               <input type="text" name="password" onChange = {e => {setPass(e.target.value)}}></input>
             </div>  
-            <div id = "error"></div>
             <div>
-              
+
                 <button onClick={onSubmit}>submit</button>
-              
+
             </div>      
         </section>         
       )      
+
     
     
   }

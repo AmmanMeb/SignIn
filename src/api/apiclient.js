@@ -22,6 +22,5 @@ export default class apiClient {
          return response.data;   
     }
 
-  
     
 }
