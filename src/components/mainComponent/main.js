@@ -32,18 +32,19 @@ function Account() {
     
       return (
         <section class="index-banner-2">
-          <div>Create Account</div>
+          <div className="title-2">Create Account</div>
           <div>
-              <label>username</label> 
+              <label>username </label> 
               <input  type="text" name="username" onChange = {e => {setUser(e.target.value)}}></input> 
             </div>
             <div>   
-              <label>password</label>
+              <label>password </label>
               <input type="text" name="password" onChange = {e => {setPass(e.target.value)}}></input>
-            </div>  
+            </div>
+            <div id="error"> </div>
             <div>
 
-                <button onClick={onSubmit}>submit</button>
+                <button class="button-3" onClick={onSubmit}>Submit</button>
 
             </div>      
         </section>         

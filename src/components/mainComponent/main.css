@@ -1,3 +1,27 @@
 * {
   margin: 0px;
 }
+
+.index-banner-2 {
+  align-items: center;
+  padding-left: 80vh;
+  padding-top: 40vh;
+}
+
+.title-2 {
+  font-size: 30px;
+  font-family: "Verdana";
+  font-weight: bold;
+  padding-left: 2vh;
+}
+
+.button-3 {
+  padding: 9px 12px;
+  background-color: rgb(255, 0, 0);
+  border: none;
+  margin-bottom: 2vh;
+  font-size: 20px;
+  color: white;
+  margin-left: 15vh;
+  margin-top: 2vh;
+}

@@ -18,7 +18,7 @@ const onSubmit = (event) => {
   apiClient.signIn(username, password).then((response) => {
     console.log(response)  
     if (response === 'Logged In') {    
-       return console.log('yay');
+      return console.log ("Welcome " (username));
     }
 
     else {
@@ -41,11 +41,12 @@ return (
         </div>
         <div class="field">   
           <label for="fullname">Password</label>
-          <input   type="text" id="password"onChange = {e => {getPass(e.target.value)}}></input>
+          <input   type="password" id="password"  minlength="8" onChange = {e => {getPass(e.target.value)}}></input>
         </div>  
         <div>
           <button class="button-1" onClick={onSubmit}>Sign In</button>
         </div> 
+        <div id = "error"></div>
         <div>
         <Link to="/">
             <button type="button" class="button-2" >
