@@ -30,24 +30,25 @@ const onSubmit = (event) => {
 }
 
 
+
 return (
     <section class="index-banner">
       <div class = "box">
       <div className = "title">Sign In</div>
-      <div>
-          <label>username</label> 
-          <input  label = "Username"type="text" id="username" onChange = {e => {getUser(e.target.value)}}></input> 
+      <div  class="field">
+          <label for="fullname">Username</label> 
+          <input   type="text" id="username" onChange = {e => {getUser(e.target.value)}}></input> 
         </div>
-        <div>   
-          <label>password</label>
-          <input type="text" id="password" onChange = {e => {getPass(e.target.value)}}></input>
+        <div class="field">   
+          <label for="fullname">Password</label>
+          <input   type="text" id="password"onChange = {e => {getPass(e.target.value)}}></input>
         </div>  
         <div>
-          <button onClick={onSubmit}>Sign In</button>
+          <button class="button-1" onClick={onSubmit}>Sign In</button>
         </div> 
         <div>
         <Link to="/">
-            <button type="button">
+            <button type="button" class="button-2" >
               Create Account
             </button>
         </Link>
