@@ -20,3 +20,26 @@
   background-attachment: fixed;
   height: calc(110vh - 80px);
 }
+
+.box {
+  padding-left: 140vh;
+  padding-top: 34vh;
+}
+
+.title {
+  font-size: 30px;
+  font-family: "Verdana";
+  font-weight: bold;
+}
+
+label {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000000;
+}
