@@ -18,7 +18,7 @@ const onSubmit = (event) => {
   apiClient.signIn(username, password).then((response) => {
     console.log(response)  
     if (response === 'Logged In') {    
-      return console.log ("Welcome " (username));
+      return  document.getElementById('error').innerHTML =("Welcome ") + (username);
     }
 
     else {

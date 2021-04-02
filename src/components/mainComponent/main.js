@@ -10,6 +10,7 @@ function Account() {
 
  const [username, setUser] = useState ('')
  const [password, setPass] = useState ('')
+ const [doRedirect, setDoRedirect] = useState(false);
  
  const onSubmit = (event) => {
   event.preventDefault()
@@ -23,14 +24,14 @@ function Account() {
      apiClient.signUp(username, password) .then((response) => {
        console.log(response)
        if (response === 'Account Created') {
-         return <Redirect to = {"/SignIn"}/>
+         return setDoRedirect(true);
         }
      })
        .catch(error => {
         console.log('Error found when creating meeting');
     })
  }
- 
+ if (doRedirect) return <Redirect to="/SignIn"/>;
     
       return (
         <section class="index-banner-2">
@@ -49,8 +50,6 @@ function Account() {
             <div>
 
                 <button class="button-3" onClick={onSubmit}>Submit</button>
-                <button>Sign Up</button>
-
             </div>    
               </div>
         </section>         
