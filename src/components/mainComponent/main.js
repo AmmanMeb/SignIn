@@ -32,6 +32,8 @@ function Account() {
     
       return (
         <section class="index-banner-2">
+          <div className= "bg"></div>
+          <div className= "float">
           <div className="title-2">Create Account</div>
           <div>
               <label>username </label> 
@@ -46,7 +48,8 @@ function Account() {
 
                 <button class="button-3" onClick={onSubmit}>Submit</button>
 
-            </div>      
+            </div>    
+              </div>
         </section>         
       )      
 

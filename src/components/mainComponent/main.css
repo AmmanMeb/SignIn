@@ -4,10 +4,7 @@
 
 .index-banner-2 {
   align-items: center;
-  padding-left: 80vh;
-  padding-top: 40vh;
 }
-
 .title-2 {
   font-size: 30px;
   font-family: "Verdana";
@@ -24,4 +21,34 @@
   color: white;
   margin-left: 15vh;
   margin-top: 2vh;
+}
+
+.float {
+  background-color: rgb(255, 255, 255);
+  padding-left: 36vh;
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  margin-left: 30vh;
+  margin-right: 50vh;
+  margin-top: 20vh;
+  padding-right: 0vh;
+  align-items: center;
+}
+
+.index-banner-2 {
+  background-image: url("../../../src/pics/Office.jpg");
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400%;
+  background-attachment: fixed;
+  height: calc(110vh - 80px);
+  margin-top: -20vh;
+  padding-top: 20vh;
+  padding-left: 20vh;
+}
+label {
+  z-index: 999;
 }
