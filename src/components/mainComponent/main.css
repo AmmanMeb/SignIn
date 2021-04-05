@@ -52,3 +52,35 @@
 label {
   z-index: 999;
 }
+
+@media only screen and (max-width: 800px) {
+  .index-banner-2 {
+    background-image: none;
+  }
+
+  .float {
+    padding-left: 0vh;
+    margin-left: 0;
+  }
+
+  .title-2 {
+    position: relative;
+    margin-bottom: 3vh;
+  }
+
+  .button-3 {
+    position: relative;
+    display: grid;
+    margin: auto;
+    margin-left: 4vh;
+    margin-top: 3vh;
+  }
+
+  .error {
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+  }
+}

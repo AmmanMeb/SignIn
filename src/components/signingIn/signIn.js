@@ -46,7 +46,7 @@ return (
         <div>
           <button class="button-1" onClick={onSubmit}>Sign In</button>
         </div> 
-        <div id = "error"></div>
+        <div id = "error" className = "error"></div>
         <div>
         <Link to="/">
             <button type="button" class="button-2" >

@@ -82,3 +82,39 @@ label {
   color: blue;
   font-size: 20px;
 }
+
+@media only screen and (max-width: 800px) {
+  .index-banner {
+    background-image: none;
+  }
+
+  .box {
+    padding-left: 0vh;
+    margin-left: 0vh;
+  }
+
+  .title {
+    position: relative;
+    text-align: center;
+  }
+
+  .button-1 {
+    position: relative;
+    display: grid;
+    margin: auto;
+  }
+
+  .error {
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+  }
+
+  .button-2 {
+    position: relative;
+    display: grid;
+    margin: auto;
+  }
+}
