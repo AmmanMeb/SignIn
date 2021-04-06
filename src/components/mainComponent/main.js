@@ -46,7 +46,7 @@ function Account() {
               <label>password </label>
               <input type="text" name="password" onChange = {e => {setPass(e.target.value)}}></input>
             </div>
-            <div id="error" className = "error"> </div>
+            <div id="error" className = "error-2"> </div>
             <div>
 
                 <button class="button-3" onClick={onSubmit}>Submit</button>
