@@ -1,0 +1,122 @@
+.title-2 {
+  font-size: 30px;
+  font-family: "Verdana";
+  font-weight: bold;
+}
+
+.error {
+  font-size: 17px;
+  z-index: 99;
+  color: red;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.index-banner {
+  background-image: url("../../../src/pics/Woman.jpg");
+  position: relative;
+  opacity: 0.7;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 400%;
+  background-attachment: fixed;
+  height: calc(110vh - 80px);
+}
+
+.box {
+  padding-left: 140vh;
+  padding-top: 34vh;
+}
+
+.title {
+  font-size: 30px;
+  font-family: "Verdana";
+  font-weight: bold;
+}
+
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+label {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input {
+  font-size: 16px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: text;
+  padding-top: 2vh;
+}
+input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: Arial;
+}
+
+.button-1 {
+  padding: 9px 12px;
+  background-color: rgb(255, 0, 0);
+  border: none;
+  margin-bottom: 2vh;
+  font-size: 20px;
+  color: white;
+}
+
+.button-2 {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: blue;
+  background-color: white;
+  color: blue;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+  .index-banner {
+    background-image: none;
+  }
+
+  .box {
+    padding-left: 0vh;
+    margin-left: 0vh;
+  }
+
+  .title {
+    position: relative;
+    text-align: center;
+  }
+
+  .button-1 {
+    position: relative;
+    display: grid;
+    margin: auto;
+  }
+
+  .error {
+    position: relative;
+    text-align: center;
+    font-size: 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+  }
+
+  .button-2 {
+    position: relative;
+    display: grid;
+    margin: auto;
+  }
+}
