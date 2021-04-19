@@ -12,10 +12,10 @@ var cors = require('cors')
 const { json } = require('body-parser')
 app.use(cors())
 
-const port = 8080
+const PORT = process.env.PORT || 8080
 
 var con = mysql.createConnection({
-  host: "localhost",
+  host: "0.0.0.0",
   user: "root",
   password: "Steven1spielberg",
   port: "3306",
@@ -50,6 +50,6 @@ app.post('/signIn', function (req, res){
 });
 
 
-app.listen(process.env.port||port, (  ) => {
-  console.log(`Example app listening at port ${port}`)
+app.listen(PORT, () => {
+  console.log(`Example app listening at port ${PORT}`)
 })
