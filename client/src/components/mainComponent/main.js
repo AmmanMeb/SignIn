@@ -37,8 +37,9 @@ function Account() {
         <section class="index-banner-2">
           <div className= "bg"></div>
           <div className= "float">
-          <div className="title-2">Create Account</div>
-          <div>
+            <div className= "type">
+              <div className="title-2">Create Account</div>
+            <div>
               <label>username </label> 
               <input  type="text" name="username" onChange = {e => {setUser(e.target.value)}}></input> 
             </div>
@@ -50,8 +51,9 @@ function Account() {
             <div>
 
                 <button class="button-3" onClick={onSubmit}>Submit</button>
-            </div>    
+            </div>
               </div>
+          </div>
         </section>         
       )      
 

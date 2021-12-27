@@ -24,14 +24,21 @@
 }
 
 .float {
+  position: absolute;
   background-color: rgb(255, 255, 255);
-  padding-left: 36vh;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
-  margin-left: 30vh;
-  margin-right: 50vh;
-  margin-top: 20vh;
-  padding-right: 0vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: auto;
+  top: 30%;
+  border-radius: 60px;
+  width: 500px;
+  height: 500px;
+}
+.type {
+  padding-top: 30%;
+  padding-left: 20%;
   align-items: center;
 }
 
@@ -62,14 +69,19 @@ label {
   z-index: 999;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px), (max-height: 800px) {
   .index-banner-2 {
     background-image: none;
   }
 
   .float {
-    padding-left: 0vh;
-    margin-left: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
   .title-2 {

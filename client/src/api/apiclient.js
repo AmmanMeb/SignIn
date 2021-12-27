@@ -5,7 +5,7 @@ import axios from 'axios'
 export default class apiClient {
     static async signUp(user, pass) {
         const response =  await  axios
-        .post('http://localhost:8080/signUp', {
+        .post('https://ammans-signin-backend.herokuapp.com/signUp', {
           username: user,
           password: pass
         })
@@ -14,7 +14,7 @@ export default class apiClient {
 
     static async signIn(user, pass){    
      const response = await axios    
-       .post('http://localhost:8080/signIn', {
+       .post('https://ammans-signin-backend.herokuapp.com/signIn', {
           username: user,
           password: pass,
        }) 

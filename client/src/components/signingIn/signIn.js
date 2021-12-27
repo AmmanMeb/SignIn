@@ -33,9 +33,15 @@ const onSubmit = (event) => {
 
 return (
     <section class="index-banner">
-      <div class = "box">
-      <div className = "title">Sign In</div>
-      <div  class="field">
+      <div class="split left">
+       <div class="centered">
+          
+      </div>  
+     </div> 
+      <div class = "split right">
+        <div class="centered">
+        <div className = "title">Sign In</div>
+        <div  class="field">
           <label for="fullname">Username</label> 
           <input   type="text" id="username" onChange = {e => {getUser(e.target.value)}}></input> 
         </div>
@@ -48,13 +54,14 @@ return (
         </div> 
         <div id = "error" className = "error"></div>
         <div>
-        <Link to="/">
+          <Link to="/">
             <button type="button" class="button-2" >
               Create Account
             </button>
-        </Link>
+          </Link>
         </div>
-        </div>     
+        </div>
+      </div>     
     </section>         
   )      
 
