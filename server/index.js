@@ -12,38 +12,47 @@ var cors = require('cors')
 const { json } = require('body-parser')
 app.use(cors())
 
+
 const PORT = process.env.PORT || 8080
 
 var con = mysql.createConnection({
-  host: "0.0.0.0",
-  user: "root",
-  password: "Steven1spielberg",
-  port: "127.0.0.1:3306",
-  database: "fullstack"
+  host: "us-cdbr-east-03.cleardb.com",
+  user: "b593b21e70f8ff",
+  password: "4fbe0bcc",
+  port: "3306",
+  database: "heroku_aec413dc71f0d38"
 })
 
-app.post('/link', function (req, res){
-  const queryString = "INSERT INTO links (links, title) VALUES (?, ?)"  
-  con.query(queryString, [req.body.links], function (err, result){
+/*mysql://b593b21e70f8ff:4fbe0bcc@us-cdbr-east-03.cleardb.com/heroku_aec413dc71f0d38?reconnect=true*/
+
+app.post('/signUp', function (req, res) {
+    const queryString = "INSERT INTO accounts (Username, Password) VALUES (?, ?)"
+    console.log (req.body)
+    con.query(queryString, [req.body.username, req.body.password], function (err, result){
     if (err) {
       throw err
     }
-     res.send ('Link Created')
+     res.send ('Account Created')
     })
-})
+  })
 
-app.post('/title', function (req, res){
-  const queryString = "INSERT INTO links (title) VALUES (?)"  
-  con.query(queryString, [req.body.links], function (err, result){
+app.post('/signIn', function (req, res){
+  const queryString = 'SELECT * FROM accounts WHERE Username = ? AND Password  = ? LIMIT 1'
+    console.log (req.body)
+    con.query(queryString, [req.body.username, req.body.password], function (err, result){     
     if (err) {
-      throw err
+     throw err;
+    }    
+    if (result.length !== 1) {
+      return  res.send('Incorrect Login')
     }
-     res.send ('Link Created')
-    })
-})
+    if (result.length === 1) {
+     res.send('Logged In')
+    };
+    });  
+});
 
 
 app.listen(PORT, () => {
   console.log(`Example app listening at port ${PORT}`)
 })
-App
