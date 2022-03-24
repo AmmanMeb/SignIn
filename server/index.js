@@ -18,38 +18,32 @@ var con = mysql.createConnection({
   host: "0.0.0.0",
   user: "root",
   password: "Steven1spielberg",
-  port: "3306",
-  database: "forum"
+  port: "127.0.0.1:3306",
+  database: "fullstack"
 })
 
-app.post('/signUp', function (req, res) {
-    const queryString = "INSERT INTO accounts (Username, Password) VALUES (?, ?)"
-    console.log (req.body)
-    con.query(queryString, [req.body.username, req.body.password], function (err, result){
+app.post('/link', function (req, res){
+  const queryString = "INSERT INTO links (links, title) VALUES (?, ?)"  
+  con.query(queryString, [req.body.links], function (err, result){
     if (err) {
       throw err
     }
-     res.send ('Account Created')
+     res.send ('Link Created')
     })
-  })
+})
 
-app.post('/signIn', function (req, res){
-  const queryString = 'SELECT * FROM accounts WHERE Username = ? AND Password  = ? LIMIT 1'
-    console.log (req.body)
-    con.query(queryString, [req.body.username, req.body.password], function (err, result){     
+app.post('/title', function (req, res){
+  const queryString = "INSERT INTO links (title) VALUES (?)"  
+  con.query(queryString, [req.body.links], function (err, result){
     if (err) {
-     throw err;
-    }    
-    if (result.length !== 1) {
-      return  res.send('Incorrect Login')
+      throw err
     }
-    if (result.length === 1) {
-     res.send('Logged In')
-    };
-    });  
-});
+     res.send ('Link Created')
+    })
+})
 
 
 app.listen(PORT, () => {
   console.log(`Example app listening at port ${PORT}`)
 })
+App
